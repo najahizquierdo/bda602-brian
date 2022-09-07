@@ -5,7 +5,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.preprocessing import StandardScaler
 
 # load Fisher's Iris dataset into a DataFrame
 iris_df = pandas.read_csv("iris.data", header=None)
@@ -72,12 +72,10 @@ fig5.show()
 # scikit-learn(random forest)
 x = iris_np
 y = iris_df["class"]
-labelencoder = LabelEncoder()
-y_tr = labelencoder.fit_transform(y)
 scaler = StandardScaler()
 x_tr = scaler.fit_transform(x)
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
+x_train, x_test, y_train, y_test = train_test_split(x_tr, y, test_size=0.3)
 
 randomTree = RandomForestClassifier(n_estimators=10)
 randomTree.fit(x_train, y_train)
@@ -97,15 +95,18 @@ print(f"K-mean prediction:{knn.predict(x_test)}")
 
 # pipline
 print("------------Model(Random Forest) via Pipeline Predictions------------")
+
+X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
+
 pipeline = Pipeline(
     [
         ("scaler", StandardScaler()),
         ("randomtree", RandomForestClassifier(n_estimators=10)),
     ]
 )
-pipeline.fit(x_train, y_train)
+pipeline.fit(X_train, y_train)
 
-prediction = pipeline.predict(x_test)
-score = pipeline.score(x_test, y_test)
+prediction = pipeline.predict(X_test)
+score = pipeline.score(X_test, y_test)
 print(f"Predictions: {prediction}")
 print(f"score: {score}")
