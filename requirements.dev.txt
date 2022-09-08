@@ -65,7 +65,7 @@ filelock==3.8.0
     # via virtualenv
 flake8==4.0.1
     # via -r requirements.dev.in
-identify==2.5.3
+identify==2.5.5
     # via pre-commit
 idna==3.3
     # via
@@ -75,7 +75,7 @@ ipykernel==6.15.2
     # via
     #   nbclassic
     #   notebook
-ipython==8.4.0
+ipython==8.5.0
     # via
     #   ipykernel
     #   jupyterlab
@@ -123,7 +123,7 @@ jupyter-server==1.18.1
     #   jupyterlab-server
     #   nbclassic
     #   notebook-shim
-jupyterlab==3.4.5
+jupyterlab==3.4.6
     # via -r requirements.dev.in
 jupyterlab-pygments==0.2.2
     # via nbconvert
@@ -211,7 +211,7 @@ prometheus-client==0.14.1
     #   notebook
 prompt-toolkit==3.0.31
     # via ipython
-psutil==5.9.1
+psutil==5.9.2
     # via ipykernel
 ptyprocess==0.7.0
     # via
@@ -306,7 +306,7 @@ traitlets==5.3.0
     #   notebook
 urllib3==1.26.12
     # via requests
-virtualenv==20.16.4
+virtualenv==20.16.5
     # via pre-commit
 wcwidth==0.2.5
     # via prompt-toolkit
@@ -314,7 +314,7 @@ webencodings==0.5.1
     # via
     #   bleach
     #   tinycss2
-websocket-client==1.4.0
+websocket-client==1.4.1
     # via jupyter-server
 wheel==0.37.1
     # via pip-tools
